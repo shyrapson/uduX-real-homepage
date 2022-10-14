@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import styled from "styled-components";
+import SideNav from "./components/sidebar/SideNav";
+import SidebarSongs from "./components/sidebar/SidebarSongs";
+
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+`;
+
+const GridBox = styled.div`
+  width: 100%;
+  height: 100%;
+    display: grid;
+   grid-template-columns: 293px 1fr;
+  `;
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <GridBox>
+        <SidebarSongs/>
+        <SideNav/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </GridBox>
+    </AppContainer>
   );
 }
 
