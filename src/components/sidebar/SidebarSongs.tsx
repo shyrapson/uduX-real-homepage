@@ -11,14 +11,16 @@ import {
   topSideNav,
 } from "../../lib/data";
 import { SoundIcon } from "../icons";
+import Vector from "../../assets/images/Vector.png";
+
 
 const SidebarContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background: url(${Sidebg}), #000000;
+  background: url(${Vector}),#000000;
   display: flex;
   flex-direction: column;
-  /* overflow-y: scroll !important; */
+  overflow-y: scroll !important; 
 `;
 
 const NavItems = styled.ul`
@@ -99,7 +101,7 @@ const Songs = styled.div`
 `;
 
 const Song = styled.div`
-  color: "#D9D9D9";
+  color: white;
   font-weight: 500;
   line-height: 2;
   height: 100%;
@@ -116,7 +118,7 @@ const SidebarSongs = () => {
         {topSideNav.map(({ icon, title, href }: ItemsType, i: number) => (
           <NavItem key={i}>
             <NavLink to={href}>
-              <Icon name={icon} /> <span>{title}</span>
+               <Icon>{icon}</Icon><span>{title}</span>
             </NavLink>
           </NavItem>
         ))}

@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { sideBarItems, sideBarItemsTypes } from "../../lib/data";
 
-console.log(sideBarItems);
+import Vector from "../../assets/images/Vector.png";
+
 
 const SideNavContainer = styled.div`
   position: fixed;
@@ -11,6 +12,10 @@ const SideNavContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   z-index: 1000;
+  background: url(${Vector});
+  padding-left: 200px;
+  
+ 
 `;
 
 const BottomIcon = styled.div`
@@ -26,7 +31,6 @@ const SideNav = () => {
       {sideBarItems.map(({ icon, href }: sideBarItemsTypes, i: number) => (
         <NavLink to={href} key={i}>
           <BottomIcon>
-            <Icon>{icon}</Icon>
           </BottomIcon>
         </NavLink>
       ))}
