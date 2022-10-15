@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { sideBarItems, sideBarItemsTypes } from "../../lib/data";
-
+import { mobile } from "../../Responsive";
 import Vector from "../../assets/images/Vector.png";
 
 
@@ -14,11 +14,14 @@ const SideNavContainer = styled.div`
   z-index: 1000;
   background: url(${Vector});
   padding-left: 200px;
+  display: flex;
 & a{
   color:white;
 }
   
- 
+/* @media screen and (max-width:1024px){
+        display: none;
+    } */
 `;
 
 const BottomIcon = styled.div`

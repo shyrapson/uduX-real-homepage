@@ -13,6 +13,7 @@ import {
 import { SoundIcon } from "../icons";
 import Vector from "../../assets/images/Vector.png";
 import User from "./User";
+import { mobile } from "../../Responsive";
 
 const SidebarContainer = styled.div`
   width: 100%;
@@ -21,6 +22,10 @@ const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll !important;
+  @media screen and (max-width:1024px){
+        display: none;
+    }
+
 `;
 
 const NavItems = styled.ul`

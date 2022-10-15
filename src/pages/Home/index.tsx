@@ -29,6 +29,9 @@ const Tag = styled.img`
   position: absolute;
   bottom: 20px;
   right: 20px;
+  @media screen and (max-width:355px){
+        display: none;
+    }
 `;
 
 const Body = styled.div`
