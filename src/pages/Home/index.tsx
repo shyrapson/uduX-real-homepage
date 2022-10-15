@@ -21,7 +21,7 @@ const Jumbotron = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px;
-  height: 255px;
+  height: 215px;
   margin-bottom: 20px;
 `;
 
@@ -34,10 +34,6 @@ const Tag = styled.img`
 const Body = styled.div`
   padding: 20px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   & h2 {
     color: #d9d9d9;
     font-size: 28px;
@@ -104,8 +100,6 @@ const CardContent = styled.div`
   }
 `;
 
-
-
 const CardBody = styled.div`
   background: ${(props: any) => props.bgColor};
   position: absolute;
@@ -120,7 +114,7 @@ const CardBody = styled.div`
 const Home = () => {
   return (
     <HomeContainer>
-   <Navbar/>
+      <Navbar />
       <Jumbotron>
         <LogoIcon />
         <Tag src={Omahlay} alt="Omah Lay" />
