@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Hero from "../../assets/images/udux_hero.png";
 import Omahlay from "../../assets/images/omahlay.png";
 import { LogoIcon } from "../../components/icons/LogoIcon";
+import Navbar from "../../components/navbar/navbar";
 const HomeContainer = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -119,7 +120,7 @@ const CardBody = styled.div`
 const Home = () => {
   return (
     <HomeContainer>
-   
+   <Navbar/>
       <Jumbotron>
         <LogoIcon />
         <Tag src={Omahlay} alt="Omah Lay" />
