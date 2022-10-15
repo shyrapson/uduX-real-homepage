@@ -14,6 +14,9 @@ const SideNavContainer = styled.div`
   z-index: 1000;
   background: url(${Vector});
   padding-left: 200px;
+& a{
+  color:white;
+}
   
  
 `;
@@ -21,9 +24,12 @@ const SideNavContainer = styled.div`
 const BottomIcon = styled.div`
   padding: 20px;
   height: 100%;
+
 `;
 
+
 const Icon = styled.div``;
+
 
 const SideNav = () => {
   return (

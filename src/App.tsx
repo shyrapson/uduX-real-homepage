@@ -19,7 +19,7 @@ const GridBox = styled.div`
   width: 100%;
   height: 100%;
     display: grid;
-   grid-template-columns: 293px 1fr;
+   grid-template-columns: 292px 1fr;
   `;
 
 
