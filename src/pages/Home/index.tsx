@@ -9,7 +9,7 @@ const HomeContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
-  background-color: "#000000";
+  background-color: #000000;
 `;
 
 const Jumbotron = styled.div`

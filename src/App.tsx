@@ -12,6 +12,7 @@ const AppContainer = styled.div`
   margin: 0;
   overflow: hidden;
   box-sizing: border-box;
+  background: #000000;
 `;
 
 const GridBox = styled.div`
