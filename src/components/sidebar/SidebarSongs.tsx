@@ -12,6 +12,7 @@ import {
 } from "../../lib/data";
 import { SoundIcon } from "../icons";
 import Vector from "../../assets/images/Vector.png";
+import User from "./User";
 
 const SidebarContainer = styled.div`
   width: 100%;
@@ -113,7 +114,7 @@ const Song = styled.div`
 const SidebarSongs = () => {
   return (
     <SidebarContainer>
-      {/* <SidebarTop display={true} /> */}
+ <User/>
       <NavItems>
         {topSideNav.map(({ icon, title, href }: ItemsType, i: number) => (
           <NavItem key={i}>
