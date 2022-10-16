@@ -1,6 +1,7 @@
-import React from "react";
+import React, {  useEffect }  from "react";
 import { ArtistCard, ArtistCards } from "../../lib/data";
 import styled from "styled-components";
+import {gsap} from "gsap";
 
 import Hero from "../../assets/images/udux_hero.png";
 import Omahlay from "../../assets/images/omahlay.png";
@@ -11,6 +12,7 @@ const HomeContainer = styled.div`
   min-height: 100vh;
   overflow-y: scroll;
   background-color: #000000;
+  overflow-x: hidden;
 `;
 
 const Jumbotron = styled.div`
@@ -52,7 +54,7 @@ const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
-  overflow-x: scroll;
+
 `;
 
 const Card = styled.div`
@@ -115,6 +117,17 @@ const CardBody = styled.div`
 `;
 
 const Home = () => {
+
+
+
+
+
+      useEffect(() => {      
+        gsap.fromTo('.ball',{opacity:0,x: -100  }, {opacity: 1 , x:0 , duration: 3 });
+
+    }, []);
+    
+
   return (
     <HomeContainer>
       <Navbar />
@@ -124,12 +137,12 @@ const Home = () => {
       </Jumbotron>
       <Body>
         <h2>Welcome Back!</h2>
-        <Cards>
+        <Cards >
           {ArtistCard.map(
             ({ image, title, content, contentBgColor, layoutColor }, index) => (
-              <Card key={index}>
-                <CardBody bgColor={layoutColor}>
-                  <CardImageLayout>
+              <Card key={index} className="ball">
+                <CardBody bgColor={layoutColor} >
+                  <CardImageLayout >
                     <CardImage src={image} alt="title" />
                   </CardImageLayout>
                 </CardBody>
@@ -145,7 +158,7 @@ const Home = () => {
         <Cards>
           {ArtistCards.map(
             ({ image, title, content, contentBgColor, layoutColor }, index) => (
-              <Card key={index}>
+              <Card key={index} className="ball">
                 <CardBody bgColor={layoutColor}>
                   <CardImageLayout>
                     <CardImage src={image} alt="title" />
