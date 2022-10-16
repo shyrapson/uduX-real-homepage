@@ -143,7 +143,7 @@ const SidebarSongs = () => {
       <NavItems>
         <Playlist>
           <NavLink to="/playlist">
-            <PlaylistIcon/> <span>My Playlists</span>
+            <PlaylistIcon/> <span>My Playlists</span><SearchIcon/>
           </NavLink>
        <SearchIcon/>
         </Playlist>

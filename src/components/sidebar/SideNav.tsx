@@ -7,14 +7,17 @@ const SideNavContainer = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
   z-index: 1000;
-  background: url(${Vector});
-  padding-left: 200px;
-  display: flex;
+  background: url(${Vector}), #000000;
+  display: none;
   & a {
     color: white;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
   }
 `;
 
@@ -30,7 +33,7 @@ const SideNav = () => {
     <SideNavContainer>
       {sideBarItems.map(({ icon, href }: sideBarItemsTypes, i: number) => (
         <NavLink to={href} key={i}>
-          <BottomIcon></BottomIcon>
+          <BottomIcon>{icon}</BottomIcon>
         </NavLink>
       ))}
     </SideNavContainer>
