@@ -1,8 +1,7 @@
-import React, {  useEffect }  from "react";
+import React, { useEffect } from "react";
 import { ArtistCard, ArtistCards } from "../../lib/data";
 import styled from "styled-components";
-import {gsap} from "gsap";
-
+import { gsap } from "gsap";
 import Hero from "../../assets/images/udux_hero.png";
 import Omahlay from "../../assets/images/omahlay.png";
 import { LogoIcon } from "../../components/icons/LogoIcon";
@@ -26,34 +25,31 @@ const Jumbotron = styled.div`
   padding: 20px;
   height: 215px;
   margin-bottom: 20px;
-  @media screen and (max-width:765px){
-     
+  @media screen and (max-width: 765px) {
     margin-left: -500px;
     height: 159px;
-    }
- 
+  }
 `;
 
 const Tag = styled.img`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  @media screen and (max-width:765px){
-        display: none;
-    }
+  @media screen and (max-width: 765px) {
+    display: none;
+  }
 `;
-const Logo =styled.svg`
-   @media screen and (max-width:765px){
-        display: none;
-    }
-`
+const Logo = styled.svg`
+  @media screen and (max-width: 765px) {
+    display: none;
+  }
+`;
 const NavbarTop = styled.div`
-display:none;
-@media screen and (max-width:765px){
-        display: flex;
-    }
-
-`
+  display: none;
+  @media screen and (max-width: 765px) {
+    display: flex;
+  }
+`;
 const Body = styled.div`
   padding: 20px;
   width: 100%;
@@ -72,7 +68,6 @@ const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
-
 `;
 
 const Card = styled.div`
@@ -135,30 +130,37 @@ const CardBody = styled.div`
 `;
 
 const Home = () => {
-      useEffect(() => {      
-        gsap.fromTo('.ball',{opacity:0,x: -100  }, {opacity: 1 , x:0 , duration: 3 });
-
-    }, []);
-    
+  useEffect(() => {
+    gsap.fromTo(
+      ".ball",
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 3 }
+    );
+  }, []);
 
   return (
     <HomeContainer>
-      <NavbarTop> <User display={true}/></NavbarTop>
-     
+      <NavbarTop>
+        {" "}
+        <User display={true} />
+      </NavbarTop>
+
       <Navbar />
       <Jumbotron>
-        <Logo><LogoIcon /></Logo>
-        
+        <Logo>
+          <LogoIcon />
+        </Logo>
+
         <Tag src={Omahlay} alt="Omah Lay" />
       </Jumbotron>
       <Body>
         <h2>Welcome Back!</h2>
-        <Cards >
+        <Cards>
           {ArtistCard.map(
             ({ image, title, content, contentBgColor, layoutColor }, index) => (
               <Card key={index} className="ball">
-                <CardBody bgColor={layoutColor} >
-                  <CardImageLayout >
+                <CardBody bgColor={layoutColor}>
+                  <CardImageLayout>
                     <CardImage src={image} alt="title" />
                   </CardImageLayout>
                 </CardBody>

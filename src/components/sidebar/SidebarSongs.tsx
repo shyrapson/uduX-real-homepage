@@ -1,19 +1,16 @@
-import React, { ReactElement } from "react";
+
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-
-import Sidebg from "../icons/Sidebg";
-
 import {
   BottomSideNav,
   ItemsType,
   Playsongs,
   topSideNav,
 } from "../../lib/data";
-import { PlaylistIcon, SoundIcon } from "../icons";
+import { PlaylistIcon, SearchIcon, SoundIcon } from "../icons";
 import Vector from "../../assets/images/Vector.png";
 import User from "./User";
-import { mobile } from "../../Responsive";
+
 
 const SidebarContainer = styled.div`
   width: 100%;
@@ -22,6 +19,7 @@ const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll !important;
+  overflow-x: hidden;
   @media screen and (max-width:1024px){
         display: none;
     }
@@ -60,7 +58,7 @@ const NavItem = styled.li`
       color: #d9d9d9 !important;
     }
     & span {
-      margin: 0px 10px;
+      margin: 0px 10px 9px;
     }
   }
 `;
@@ -72,7 +70,9 @@ const Separator = styled.div`
   margin: 15px 0px;
 `;
 
-const Icon = styled.div``;
+const Icon = styled.div`
+
+`;
 const Playlist = styled.div`
   width: 100%;
   display: flex;
@@ -145,7 +145,7 @@ const SidebarSongs = () => {
           <NavLink to="/playlist">
             <PlaylistIcon/> <span>My Playlists</span>
           </NavLink>
-          <Icon name="search" />
+       <SearchIcon/>
         </Playlist>
         <Separator />
         <Songs>

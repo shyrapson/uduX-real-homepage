@@ -1,9 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { sideBarItems, sideBarItemsTypes } from "../../lib/data";
-import { mobile } from "../../Responsive";
 import Vector from "../../assets/images/Vector.png";
-
 
 const SideNavContainer = styled.div`
   position: fixed;
@@ -15,32 +13,24 @@ const SideNavContainer = styled.div`
   background: url(${Vector});
   padding-left: 200px;
   display: flex;
-& a{
-  color:white;
-}
-  
-/* @media screen and (max-width:1024px){
-        display: none;
-    } */
+  & a {
+    color: white;
+  }
 `;
 
 const BottomIcon = styled.div`
   padding: 20px;
   height: 100%;
-
 `;
 
-
 const Icon = styled.div``;
-
 
 const SideNav = () => {
   return (
     <SideNavContainer>
       {sideBarItems.map(({ icon, href }: sideBarItemsTypes, i: number) => (
         <NavLink to={href} key={i}>
-          <BottomIcon>
-          </BottomIcon>
+          <BottomIcon></BottomIcon>
         </NavLink>
       ))}
     </SideNavContainer>

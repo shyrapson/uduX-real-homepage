@@ -21,24 +21,23 @@ const AppContainer = styled.div`
 const GridBox = styled.div`
   width: 100%;
   height: 100%;
-    display: grid;
-   grid-template-columns: 292px 1fr;
-   
-  @media screen and (max-width: 768px){
+  display: grid;
+  grid-template-columns: 292px 1fr;
+
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  `;
-
+`;
 
 function App() {
   return (
     <AppContainer>
       <GridBox>
-        <SidebarSongs/>
-        <SideNav/>
+        <SidebarSongs />
+        <SideNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/discover" element={<Discover/>} />
+          <Route path="/discover" element={<Discover />} />
           <Route path="/songs" element={<Songs />} />
           <Route path="/library" element={<Library />} />
         </Routes>
