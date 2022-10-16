@@ -1,0 +1,21 @@
+import React from 'react'
+import styled from "styled-components";
+
+
+
+
+const SongContainer =styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+  color:white;
+  font-size: 30px;
+  font-weight: bold;
+`
+const Songs = () => {
+  return (
+    <SongContainer>COMING SOON.......</SongContainer>
+  )
+}
+
+export default Songs

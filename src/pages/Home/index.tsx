@@ -7,6 +7,7 @@ import Hero from "../../assets/images/udux_hero.png";
 import Omahlay from "../../assets/images/omahlay.png";
 import { LogoIcon } from "../../components/icons/LogoIcon";
 import Navbar from "../../components/navbar/navbar";
+import User from "../../components/sidebar/User";
 const HomeContainer = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -16,7 +17,7 @@ const HomeContainer = styled.div`
 `;
 
 const Jumbotron = styled.div`
-  width: 100%;
+  min-width: 100%;
   position: relative;
   background-image: url(${Hero});
   background-position: center;
@@ -25,17 +26,34 @@ const Jumbotron = styled.div`
   padding: 20px;
   height: 215px;
   margin-bottom: 20px;
+  @media screen and (max-width:765px){
+     
+    margin-left: -500px;
+    height: 159px;
+    }
+ 
 `;
 
 const Tag = styled.img`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  @media screen and (max-width:355px){
+  @media screen and (max-width:765px){
         display: none;
     }
 `;
+const Logo =styled.svg`
+   @media screen and (max-width:765px){
+        display: none;
+    }
+`
+const NavbarTop = styled.div`
+display:none;
+@media screen and (max-width:765px){
+        display: flex;
+    }
 
+`
 const Body = styled.div`
   padding: 20px;
   width: 100%;
@@ -117,11 +135,6 @@ const CardBody = styled.div`
 `;
 
 const Home = () => {
-
-
-
-
-
       useEffect(() => {      
         gsap.fromTo('.ball',{opacity:0,x: -100  }, {opacity: 1 , x:0 , duration: 3 });
 
@@ -130,9 +143,12 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <NavbarTop> <User display={true}/></NavbarTop>
+     
       <Navbar />
       <Jumbotron>
-        <LogoIcon />
+        <Logo><LogoIcon /></Logo>
+        
         <Tag src={Omahlay} alt="Omah Lay" />
       </Jumbotron>
       <Body>

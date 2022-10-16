@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import styled from "styled-components";
 import SideNav from "./components/sidebar/SideNav";
 import SidebarSongs from "./components/sidebar/SidebarSongs";
+import Discover from "./pages/Discover";
+import Songs from "./pages/Songs";
+import Library from "./pages/Library";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -20,6 +23,10 @@ const GridBox = styled.div`
   height: 100%;
     display: grid;
    grid-template-columns: 292px 1fr;
+   
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+  }
   `;
 
 
@@ -31,6 +38,9 @@ function App() {
         <SideNav/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/discover" element={<Discover/>} />
+          <Route path="/songs" element={<Songs />} />
+          <Route path="/library" element={<Library />} />
         </Routes>
       </GridBox>
     </AppContainer>

@@ -5,6 +5,7 @@ const NavbarContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 20px;
+  
 `;
 
 const BtnIcon = styled.div`
@@ -16,6 +17,9 @@ const BtnIcon = styled.div`
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
+  @media screen and (max-width:765px){
+        display: none;
+    }
 `;
 const Input = styled.input`
   padding: 8px;
@@ -35,6 +39,9 @@ const InputContainer = styled.div`
   margin-left: 70px;
   padding: 0px 20px;
   width: 471px;
+  @media screen and (max-width:765px){
+        display: none;
+    }
 `;
 
 const Navbar = () => {

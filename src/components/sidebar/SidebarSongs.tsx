@@ -10,7 +10,7 @@ import {
   Playsongs,
   topSideNav,
 } from "../../lib/data";
-import { SoundIcon } from "../icons";
+import { PlaylistIcon, SoundIcon } from "../icons";
 import Vector from "../../assets/images/Vector.png";
 import User from "./User";
 import { mobile } from "../../Responsive";
@@ -116,10 +116,11 @@ const Song = styled.div`
   cursor: pointer;
 `;
 
+
 const SidebarSongs = () => {
   return (
     <SidebarContainer>
- <User/>
+<User />
       <NavItems>
         {topSideNav.map(({ icon, title, href }: ItemsType, i: number) => (
           <NavItem key={i}>
@@ -142,7 +143,7 @@ const SidebarSongs = () => {
       <NavItems>
         <Playlist>
           <NavLink to="/playlist">
-            <Icon name="playlist" /> <span>My Playlists</span>
+            <PlaylistIcon/> <span>My Playlists</span>
           </NavLink>
           <Icon name="search" />
         </Playlist>
